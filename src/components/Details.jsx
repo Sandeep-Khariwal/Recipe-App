@@ -8,7 +8,7 @@ const defaultvalue = {
   
 }
 
-const Details = ({product} ) => {
+const Details = ({product}) => {
 
 const {id} = useParams()
 
@@ -16,10 +16,9 @@ const [recipe,setRecipe] = useState(defaultvalue)
 
   useEffect(()=>{
       const data = product.filter(item => id === item.idCategory)
-      setRecipe(...data)
-  },[])
+      setRecipe({...data[0]})
+  },[product])
 
-  console.log("recipe is : ",recipe)
 
   return (
     <div className='details'>
