@@ -15,7 +15,7 @@ const Home = ({product,favourite}) => {
     <input type="text" name='name' placeholder='Search: e.g Beef' onChange={(e)=>setText(e.target.value)}/>
     <div className='showList'>
       {
-        product.filter((user) => user.strCategory.toLowerCase().includes(text)).map((item)=>(
+        product.filter((user) => user.strCategory.includes(text)).map((item)=>(
           <Items key={item.idCategory} Items={item} favourite={favourite} />
         ))
       }
